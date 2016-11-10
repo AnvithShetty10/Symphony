@@ -45,9 +45,16 @@ function spin() {
     setTimeout('fade();', 1000);
 }
 
+
+
 function fade() {
     $('body').fadeOut(1000, load);
 
+}
+
+
+function alertq(){
+  alert("Please Login/Sign Up to Continue");
 }
 
 function load() {
@@ -129,7 +136,6 @@ function closepro() {
 
 function artist(tab){
   var x=document.getElementById(tab);
-  console.log(x.children[0].children[1].children[0].children[0].textContent);
   var i;
   for(i=0;i<10;i++)
     {var z=x.children[0].children[1].children[i].children[0];

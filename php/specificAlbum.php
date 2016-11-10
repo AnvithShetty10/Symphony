@@ -1,10 +1,17 @@
 <?php
+session_start();
 $album=  $_GET['name'];
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbName = "music";
 
+if(!isset($_SESSION['pic']))
+        $_SESSION['pic'] = '';
+if(!isset($_SESSION['eid']))
+        $_SESSION['eid'] = 'email';
+if(!isset($_SESSION['uname']))
+        $_SESSION['uname'] = 'user';
 // Create connection
 $conn = new mysqli($servername, $username, $password , $dbName);
 
@@ -59,6 +66,8 @@ else {
     <script type="text/javascript">var songList = <?php echo $names ?></script>
     <title>Symphony</title>
     <style>
+
+
         #blur {
 
             height: 180px;
@@ -130,15 +139,6 @@ else {
           font-family: myFont2;
         }
 
-        .sidenav{
-          position: absolute;
-          margin-top: 11%;
-        }
-
-        .search_box input {
-        height: 40px;
-        width: 390px;
-      }
 
       #edit img{
         height:2%;
@@ -181,10 +181,14 @@ else {
             </form>
 
             <div class="container">
-                <h4><b><?php echo $_SESSION['uname'] ?></b></h4>
+                <h3><b><?php echo $_SESSION['uname'] ?></b></h3>
                 <p>Email:<?php echo $_SESSION['eid'] ?></p>
             </div>
+
           </div>
+          <h6 style="color:white;font-size:1.5em;">Your Playlist</h6>
+          <ol id="playlist">
+          </ol>
         </div>
     </div>
 

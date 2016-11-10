@@ -25,7 +25,7 @@ $row = $result->fetch_assoc();
 session_start();
 $_SESSION['uname']=$username;
 $_SESSION['pic']=$row[DP];
-$_SESSION['eid']=$row[Email];
+$_SESSION['eid']=$emailid;
 
 header("Location:home.php");
 

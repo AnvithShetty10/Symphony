@@ -12,7 +12,10 @@ if(isset($_COOKIES['lang']))
 }
 if(!isset($_SESSION['pic']))
     $_SESSION['pic']="";
-
+    if(!isset($_SESSION['eid']))
+            $_SESSION['eid'] = 'email';
+    if(!isset($_SESSION['uname']))
+            $_SESSION['uname'] = 'user';
 // Create connection
 $conn = new mysqli($servername, $username, $password , $dbName);
 
